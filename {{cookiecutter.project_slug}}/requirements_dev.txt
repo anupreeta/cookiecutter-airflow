@@ -12,3 +12,8 @@ click==6.7{% endif %}
 {% if cookiecutter.use_pytest == 'y' -%}
 pytest==3.4.2
 pytest-runner==2.11.1{% endif %}
+{% if cookiecutter.use_sqlalchemy == 'y' -%}
+SQLAlchemy==1.2.8
+psycopg2-binary==2.7.4{% endif %}
+{% if cookiecutter.use_rows == 'y' -%}
+rows==0.3.1{% endif %}

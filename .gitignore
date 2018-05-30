@@ -92,6 +92,10 @@ docs/_build/
 # PyBuilder
 target/
 
+# Editor
+.vscode/
+.idea
+
 # Cookiecutter
 output/
 python_boilerplate/

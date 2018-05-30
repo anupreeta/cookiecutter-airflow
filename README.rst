@@ -1,18 +1,18 @@
 ======================
-Cookiecutter PyPackage
+Cookiecutter Airflow
 ======================
 
-.. image:: https://pyup.io/repos/github/audreyr/cookiecutter-pypackage/shield.svg
-     :target: https://pyup.io/repos/github/audreyr/cookiecutter-pypackage/
+.. image:: https://pyup.io/repos/github/gilsondev/cookiecutter-airflow/shield.svg
+     :target: https://pyup.io/repos/github/gilsondev/cookiecutter-airflow/
      :alt: Updates
 
-.. image:: https://travis-ci.org/audreyr/cookiecutter-pypackage.svg?branch=master
-    :target: https://travis-ci.org/audreyr/cookiecutter-pypackage     
+.. image:: https://travis-ci.org/gilsondev/cookiecutter-airflow.svg?branch=master
+    :target: https://travis-ci.org/gilsondev/cookiecutter-airflow
 
-Cookiecutter_ template for a Python package.
+Cookiecutter_ template for a Airflow that need external modules. Based on [Cookiecutter pypackage](https://github.com/gilsondev/cookiecutter-airflow/)
 
-* GitHub repo: https://github.com/audreyr/cookiecutter-pypackage/
-* Documentation: https://cookiecutter-pypackage.readthedocs.io/
+* GitHub repo: https://github.com/gilsondev/cookiecutter-airflow/
+* Documentation: Soon
 * Free software: BSD license
 
 Features
@@ -23,24 +23,26 @@ Features
 * Tox_ testing: Setup to easily test for Python 2.7, 3.4, 3.5, 3.6
 * Sphinx_ docs: Documentation ready for generation with, for example, ReadTheDocs_
 * Bumpversion_: Pre-configured version bumping with a single command
+* SQLAlchemy_: Support to access database
 * Auto-release to PyPI_ when you push a new tag to master (optional)
 * Command line interface using Click (optional)
+* Copy DAG module after install or create symlink in develop mode (DAGS_FOLDER)
 
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _Cookiecutter: https://github.com/gilsondev/cookiecutter
 
 Build Status
 -------------
 
 Linux:
 
-.. image:: https://img.shields.io/travis/audreyr/cookiecutter-pypackage.svg
-    :target: https://travis-ci.org/audreyr/cookiecutter-pypackage
+.. image:: https://img.shields.io/travis/gilsondev/cookiecutter-airflow.svg
+    :target: https://travis-ci.org/gilsondev/cookiecutter-airflow
     :alt: Linux build status on Travis CI
 
 Windows:
 
-.. image:: https://ci.appveyor.com/api/projects/status/github/audreyr/cookiecutter-pypackage?branch=master&svg=true
-    :target: https://ci.appveyor.com/project/audreyr/cookiecutter-pypackage/branch/master
+.. image:: https://ci.appveyor.com/api/projects/status/github/gilsondev/cookiecutter-airflow?branch=master&svg=true
+    :target: https://ci.appveyor.com/project/gilsondev/cookiecutter-airflow/branch/master
     :alt: Windows build status on Appveyor
 
 Quickstart
@@ -53,7 +55,7 @@ Cookiecutter 1.4.0 or higher)::
 
 Generate a Python package project::
 
-    cookiecutter https://github.com/audreyr/cookiecutter-pypackage.git
+    cookiecutter https://github.com/gilsondev/cookiecutter-airflow.git
 
 Then:
 
@@ -71,10 +73,6 @@ Then:
 
 .. _`pip docs for requirements files`: https://pip.pypa.io/en/stable/user_guide/#requirements-files
 .. _Register: https://packaging.python.org/distributing/#register-your-project
-
-For more details, see the `cookiecutter-pypackage tutorial`_.
-
-.. _`cookiecutter-pypackage tutorial`: https://cookiecutter-pypackage.readthedocs.io/en/latest/tutorial.html
 
 Not Exactly What You Want?
 --------------------------
@@ -98,25 +96,6 @@ Similar Cookiecutter Templates
 
 * Also see the `network`_ and `family tree`_ for this repo. (If you find
   anything that should be listed here, please add it and send a pull request!)
-  
-Support this Project
-~~~~~~~~~~~~~~~~~~~~~
-
-You can take our detailed course that covers all the features of this template, which has the added bonus of funding this project:
-
-.. image:: https://www.pydanny.com/static/packaging-course.jpg
-   :name: Creating and Distributing Python Packages image
-   :align: center
-   :alt: Creating and Distributing Python Packages
-   :target: https://courses.twoscoopspress.com/courses/creating-and-distributing-python-packages
-
-También disponible en español:
-
-.. image:: https://www.pydanny.com/static/packaging-course-es.jpg
-   :name: Creating and Distributing Python Packages ES image
-   :align: center
-   :alt: Creating and Distributing Python Packages ES
-   :target: https://courses.twoscoopspress.com/courses/creating-and-distributing-python-packages-es
 
 Fork This / Create Your Own
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -147,10 +126,10 @@ make my own packaging experience better.
 .. _Punch: https://github.com/lgiordani/punch
 .. _PyPi: https://pypi.python.org/pypi
 
-.. _`Nekroze/cookiecutter-pypackage`: https://github.com/Nekroze/cookiecutter-pypackage
-.. _`tony/cookiecutter-pypackage-pythonic`: https://github.com/tony/cookiecutter-pypackage-pythonic
-.. _`ardydedase/cookiecutter-pypackage`: https://github.com/ardydedase/cookiecutter-pypackage
-.. _`lgiordani/cookiecutter-pypackage`: https://github.com/lgiordani/cookiecutter-pypackage
-.. _github comparison view: https://github.com/tony/cookiecutter-pypackage-pythonic/compare/audreyr:master...master
-.. _`network`: https://github.com/audreyr/cookiecutter-pypackage/network
-.. _`family tree`: https://github.com/audreyr/cookiecutter-pypackage/network/members
+.. _`Nekroze/cookiecutter-airflow`: https://github.com/Nekroze/cookiecutter-airflow
+.. _`tony/cookiecutter-airflow-pythonic`: https://github.com/tony/cookiecutter-airflow-pythonic
+.. _`ardydedase/cookiecutter-airflow`: https://github.com/ardydedase/cookiecutter-airflow
+.. _`lgiordani/cookiecutter-airflow`: https://github.com/lgiordani/cookiecutter-airflow
+.. _github comparison view: https://github.com/tony/cookiecutter-airflow-pythonic/compare/gilsondev:master...master
+.. _`network`: https://github.com/gilsondev/cookiecutter-airflow/network
+.. _`family tree`: https://github.com/gilsondev/cookiecutter-airflow/network/members

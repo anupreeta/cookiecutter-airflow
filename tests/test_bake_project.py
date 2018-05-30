@@ -81,7 +81,7 @@ def test_bake_with_defaults(cookies):
 
         found_toplevel_files = [f.basename for f in result.project.listdir()]
         assert 'setup.py' in found_toplevel_files
-        assert 'python_boilerplate' in found_toplevel_files
+        assert 'dag_example' in found_toplevel_files
         assert 'tox.ini' in found_toplevel_files
         assert 'tests' in found_toplevel_files
 
@@ -111,7 +111,7 @@ def test_bake_with_apostrophe_and_run_tests(cookies):
 #     # given:
 #     with bake_in_temp_dir(cookies) as result:
 #         project_path = str(result.project)
-# 
+#
 #         # when:
 #         travis_setup_cmd = ('python travis_pypi_setup.py'
 #                             ' --repo audreyr/cookiecutter-pypackage --password invalidpass')
@@ -124,7 +124,8 @@ def test_bake_with_apostrophe_and_run_tests(cookies):
 
 def test_bake_without_travis_pypi_setup(cookies):
     with bake_in_temp_dir(cookies, extra_context={'use_pypi_deployment_with_travis': 'n'}) as result:
-        result_travis_config = yaml.load(result.project.join(".travis.yml").open())
+        result_travis_config = yaml.load(
+            result.project.join(".travis.yml").open())
         assert "deploy" not in result_travis_config
         assert "python" == result_travis_config["language"]
         found_toplevel_files = [f.basename for f in result.project.listdir()]
@@ -146,6 +147,18 @@ def test_bake_without_author_file(cookies):
         manifest_path = result.project.join('MANIFEST.in')
         with open(str(manifest_path)) as manifest_file:
             assert 'AUTHORS.rst' not in manifest_file.read()
+
+
+def test_bake_with_sqlalchemy_support(cookies):
+    with bake_in_temp_dir(cookies, extra_context={'use_sqlalchemy': 'y'}) as result:
+        assert result.project.join('dag_example/core/database.py').exists()
+        assert result.project.join('tests/conftest.py').exists()
+
+
+def test_bake_without_sqlalchemy_support(cookies):
+    with bake_in_temp_dir(cookies, extra_context={'use_sqlalchemy': 'n'}) as result:
+        assert not result.project.join('dag_example/core/database.py').exists()
+        assert not result.project.join('tests/conftest.py').exists()
 
 
 def test_make_help(cookies):
@@ -179,7 +192,7 @@ def test_bake_not_open_source(cookies):
 def test_using_pytest(cookies):
     with bake_in_temp_dir(cookies, extra_context={'use_pytest': 'y'}) as result:
         assert result.project.isdir()
-        test_file_path = result.project.join('tests/test_python_boilerplate.py')
+        test_file_path = result.project.join('tests/test_dag_example.py')
         lines = test_file_path.readlines()
         assert "import pytest" in ''.join(lines)
         # Test the new pytest target
@@ -191,26 +204,11 @@ def test_using_pytest(cookies):
 def test_not_using_pytest(cookies):
     with bake_in_temp_dir(cookies) as result:
         assert result.project.isdir()
-        test_file_path = result.project.join('tests/test_python_boilerplate.py')
+        test_file_path = result.project.join(
+            'tests/test_dag_example.py')
         lines = test_file_path.readlines()
         assert "import unittest" in ''.join(lines)
         assert "import pytest" not in ''.join(lines)
-
-
-# def test_project_with_hyphen_in_module_name(cookies):
-#     result = cookies.bake(extra_context={'project_name': 'something-with-a-dash'})
-#     assert result.project is not None
-#     project_path = str(result.project)
-# 
-#     # when:
-#     travis_setup_cmd = ('python travis_pypi_setup.py'
-#                         ' --repo audreyr/cookiecutter-pypackage --password invalidpass')
-#     run_inside_dir(travis_setup_cmd, project_path)
-# 
-#     # then:
-#     result_travis_config = yaml.load(open(os.path.join(project_path, ".travis.yml")))
-#     assert "secure" in result_travis_config["deploy"]["password"],\
-#         "missing password config in .travis.yml"
 
 
 def test_bake_with_no_console_script(cookies):
@@ -255,7 +253,8 @@ def test_bake_with_console_script_cli(cookies):
     runner = CliRunner()
     noarg_result = runner.invoke(cli.main)
     assert noarg_result.exit_code == 0
-    noarg_output = ' '.join(['Replace this message by putting your code into', project_slug])
+    noarg_output = ' '.join(
+        ['Replace this message by putting your code into', project_slug])
     assert noarg_output in noarg_result.output
     help_result = runner.invoke(cli.main, ['--help'])
     assert help_result.exit_code == 0
