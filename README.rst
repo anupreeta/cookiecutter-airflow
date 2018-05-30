@@ -9,7 +9,7 @@ Cookiecutter Airflow
 .. image:: https://travis-ci.org/gilsondev/cookiecutter-airflow.svg?branch=master
     :target: https://travis-ci.org/gilsondev/cookiecutter-airflow
 
-Cookiecutter_ template for a Airflow that need external modules. Based on [Cookiecutter pypackage](https://github.com/gilsondev/cookiecutter-airflow/)
+Cookiecutter_ template for a Airflow that need external modules. Based on cookiecutter-pypackage_.
 
 * GitHub repo: https://github.com/gilsondev/cookiecutter-airflow/
 * Documentation: Soon
@@ -117,12 +117,14 @@ I also accept pull requests on this, if they're small, atomic, and if they
 make my own packaging experience better.
 
 
+.. _cookiecutter-pypackage: https://github.com/audreyr/cookiecutter-pypackage
 .. _Travis-CI: http://travis-ci.org/
 .. _Tox: http://testrun.org/tox/
 .. _Sphinx: http://sphinx-doc.org/
 .. _ReadTheDocs: https://readthedocs.io/
 .. _`pyup.io`: https://pyup.io/
 .. _Bumpversion: https://github.com/peritus/bumpversion
+.. _SQLAlchemy: http://www.sqlalchemy.org/
 .. _Punch: https://github.com/lgiordani/punch
 .. _PyPi: https://pypi.python.org/pypi
 
