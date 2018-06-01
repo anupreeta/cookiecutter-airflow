@@ -152,6 +152,7 @@ def test_bake_without_author_file(cookies):
 def test_bake_with_sqlalchemy_support(cookies):
     with bake_in_temp_dir(cookies, extra_context={'use_sqlalchemy': 'y'}) as result:
         assert result.project.join('dag_example/core/database.py').exists()
+        assert result.project.join('dag_example/models.py').exists()
         assert result.project.join('tests/conftest.py').exists()
 
 

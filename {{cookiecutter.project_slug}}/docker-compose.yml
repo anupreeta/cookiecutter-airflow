@@ -1,0 +1,13 @@
+version: '3'
+services:
+    opendatabr:
+        image: postgres:9.5
+        volumes:
+            - ./bin/database:/docker-entrypoint-initdb.d
+        environment:
+            - POSTGRES_MULTIPLE_DATABASES={{cookiecutter.project_slug}},{{cookiecutter.project_slug}}_test
+            - POSTGRES_USER={{cookiecutter.project_slug}}
+            - POSTGRES_PASSWORD={{cookiecutter.project_slug}}
+        ports:
+            - "5432:5432"
+

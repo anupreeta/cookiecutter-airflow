@@ -1,0 +1,5 @@
+# To development, we recommend the direnv. See more:
+#
+# https://direnv.net/
+export AIRFLOW_HOME=$PWD/airflow
+export DATABASE_URL=postgresql://{{cookiecutter.project_slug}}:{{cookiecutter.project_slug}}@localhost/{{cookiecutter.project_slug}}_test

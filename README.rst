@@ -19,11 +19,13 @@ Features
 --------
 
 * Testing setup with ``unittest`` and ``python setup.py test`` or ``py.test``
+* Mock requests_ library with responses_
 * Travis-CI_: Ready for Travis Continuous Integration testing
 * Tox_ testing: Setup to easily test for Python 2.7, 3.4, 3.5, 3.6
 * Sphinx_ docs: Documentation ready for generation with, for example, ReadTheDocs_
 * Bumpversion_: Pre-configured version bumping with a single command
 * SQLAlchemy_: Support to access database
+* Rows_: Beautiful interface to tabular data, no matter the format
 * Auto-release to PyPI_ when you push a new tag to master (optional)
 * Command line interface using Click (optional)
 * Copy DAG module after install or create symlink in develop mode (DAGS_FOLDER)
@@ -118,6 +120,8 @@ make my own packaging experience better.
 
 
 .. _cookiecutter-pypackage: https://github.com/audreyr/cookiecutter-pypackage
+.. _requests: https://github.com/requests/requests
+.. _responses: https://github.com/getsentry/responses
 .. _Travis-CI: http://travis-ci.org/
 .. _Tox: http://testrun.org/tox/
 .. _Sphinx: http://sphinx-doc.org/
@@ -125,13 +129,14 @@ make my own packaging experience better.
 .. _`pyup.io`: https://pyup.io/
 .. _Bumpversion: https://github.com/peritus/bumpversion
 .. _SQLAlchemy: http://www.sqlalchemy.org/
+.. _Rows: https://github.com/turicas/rows
 .. _Punch: https://github.com/lgiordani/punch
 .. _PyPi: https://pypi.python.org/pypi
 
-.. _`Nekroze/cookiecutter-airflow`: https://github.com/Nekroze/cookiecutter-airflow
-.. _`tony/cookiecutter-airflow-pythonic`: https://github.com/tony/cookiecutter-airflow-pythonic
-.. _`ardydedase/cookiecutter-airflow`: https://github.com/ardydedase/cookiecutter-airflow
-.. _`lgiordani/cookiecutter-airflow`: https://github.com/lgiordani/cookiecutter-airflow
+.. _`Nekroze/cookiecutter-pypackage`: https://github.com/Nekroze/cookiecutter-pypackage
+.. _`tony/cookiecutter-pypackage-pythonic`: https://github.com/tony/cookiecutter-pypackage-pythonic
+.. _`ardydedase/cookiecutter-pypackage`: https://github.com/ardydedase/cookiecutter-pypackage
+.. _`lgiordani/cookiecutter-pypackage`: https://github.com/lgiordani/cookiecutter-pypackage
 .. _github comparison view: https://github.com/tony/cookiecutter-airflow-pythonic/compare/gilsondev:master...master
 .. _`network`: https://github.com/gilsondev/cookiecutter-airflow/network
 .. _`family tree`: https://github.com/gilsondev/cookiecutter-airflow/network/members

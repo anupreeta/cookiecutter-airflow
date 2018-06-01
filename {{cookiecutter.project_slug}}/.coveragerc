@@ -1,0 +1,6 @@
+[run]
+source: {{cookiecutter.project_slug}}
+omit =
+    # DAG file
+    */{{cookiecutter.dag_module_name}}.py
+    .tox/*

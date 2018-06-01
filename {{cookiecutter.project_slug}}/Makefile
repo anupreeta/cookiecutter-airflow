@@ -50,6 +50,13 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr htmlcov/
 	rm -fr .pytest_cache
 
+setup_airflow: ## Configure airflow home and initialize your local db
+	AIRFLOW_HOME=$$PWD/airflow airflow initdb
+	mkdir -p $$PWD/airflow/dags
+
+run_airflow: ## Run airflow development webserver
+	AIRFLOW_HOME=$$PWD/airflow airflow webserver
+
 lint: ## check style with flake8
 	flake8 {{ cookiecutter.project_slug }} tests
 
