@@ -1,5 +1,0 @@
-# Specify requirement files by hand, default is empty
-# default: empty
-# allowed: list
-requirements:
-  - requirements_dev.txt
