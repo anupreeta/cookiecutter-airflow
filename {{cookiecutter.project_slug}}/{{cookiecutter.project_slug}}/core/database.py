@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
-from integracao_evg_suap.models import Base
+from {{ cookiecutter.project_slug }}.models import Base
 
 
 def database_connect(database_url: str):

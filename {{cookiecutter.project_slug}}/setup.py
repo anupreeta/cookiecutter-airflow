@@ -54,7 +54,10 @@ requirements = [
     'rows==0.3.1', {% endif %}
 ]
 
-setup_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest-runner', {%- endif %} ]
+setup_requirements = [
+    'apache-airflow==1.9.0',
+    {%- if cookiecutter.use_pytest == 'y' %}'pytest-runner', {%- endif %}
+]
 
 test_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest', {%- endif %} ]
 
