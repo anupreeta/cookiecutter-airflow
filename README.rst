@@ -25,6 +25,7 @@ Features
 * Sphinx_ docs: Documentation ready for generation with, for example, ReadTheDocs_
 * Bumpversion_: Pre-configured version bumping with a single command
 * SQLAlchemy_: Support to access database
+* Alembic_: Generate migrations to execute in your database
 * Rows_: Beautiful interface to tabular data, no matter the format
 * Auto-release to PyPI_ when you push a new tag to master (optional)
 * Command line interface using Click (optional)
@@ -129,6 +130,7 @@ make my own packaging experience better.
 .. _`pyup.io`: https://pyup.io/
 .. _Bumpversion: https://github.com/peritus/bumpversion
 .. _SQLAlchemy: http://www.sqlalchemy.org/
+.. _Alembic: http://alembic.zzzcomputing.com/en/latest/
 .. _Rows: https://github.com/turicas/rows
 .. _Punch: https://github.com/lgiordani/punch
 .. _PyPi: https://pypi.python.org/pypi

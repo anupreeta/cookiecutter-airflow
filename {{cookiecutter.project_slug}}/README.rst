@@ -29,6 +29,85 @@
 * Documentation: https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io.
 {% endif %}
 
+
+Minimal requirements
+--------------------
+
+ - Python >=3.6
+ - Docker
+ - Docker Compose
+
+
+Installation
+------------
+
+1. Checkout the project
+
+.. code:: bash
+
+    $ git clone https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}.git
+
+2. Create the virtualenv and install the dependencies
+
+.. code:: bash
+
+    $ python3 -m venv .venv
+    $ source .venv/bin/activate
+    $ pip install -r requirements_dev.txt
+
+4. Do the configuration of Airflow
+
+.. code:: bash
+
+    $ make setup_airflow
+    $ export AIRFLOW_HOME=$PWD/airflow
+
+4. Install the packate in ``develop`` mode
+
+.. code:: bash
+
+    $ make develop
+
+This is create a simbolic link of module, where have your DAG in Airflow DAG folder.
+
+5. Create the database for development and test using ``docker-compose``
+
+.. code:: bash
+
+    $ docker-compose up -d
+    $ export DATABASE_URL=postgresql://{{ cookiecutter.project_slug }}:{{ cookiecutter.project_slug }}@localhost/{{ cookiecutter.project_slug }}_test
+
+6. Run all migrations for create the tables
+
+.. code:: bash
+
+    $ make migrate
+
+7. Run the Airflow panel and/or run your DAG:
+
+.. code:: bash
+
+    $ make run_airflow
+
+
+.. code:: bash
+
+    $ airflow backfill -s 2018-01-01 dag_integracao_evg_suap -sd airflow/dags
+
+
+Using direnv
+------------
+
+To recognize the variable environment in fast mode, we recommend that use direnv_ for set this values automatically.
+
+.. code:: bash
+
+    $ cp contrib/env-sample .envrc
+    $ direnv allow .
+
+This define the variabled ``AIRFLOW_HOME`` and ``DATABASE_URL``.
+
+
 Features
 --------
 
@@ -37,7 +116,8 @@ Features
 Credits
 -------
 
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+This package was created with Cookiecutter_ and the `gilsondev/cookiecutter-airflow`_ project template.
 
+.. _direnv: https://direnv.net/
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+.. _`gilsondev/cookiecutter-airflow`: https://github.com/gilsondev/cookiecutter-airflow

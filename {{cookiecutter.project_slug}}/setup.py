@@ -46,7 +46,6 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [
-    'apache-airflow==1.9.0',
     {%- if cookiecutter.command_line_interface|lower == 'click' %}'Click>=6.0', {%- endif %}
     {%- if cookiecutter.use_sqlalchemy == 'y' %}
     'SQLAlchemy==1.2.8',

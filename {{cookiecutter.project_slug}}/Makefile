@@ -57,6 +57,9 @@ setup_airflow: ## Configure airflow home and initialize your local db
 run_airflow: ## Run airflow development webserver
 	AIRFLOW_HOME=$$PWD/airflow airflow webserver
 
+migrate: ## Run al migrations of project
+	cd $$PWD/{{ cookiecutter.project_slug }} && alembic upgrade head
+
 lint: ## check style with flake8
 	flake8 {{ cookiecutter.project_slug }} tests
 

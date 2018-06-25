@@ -1,9 +1,8 @@
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
-Base = declarative_base()
+from integracao_evg_suap.models import Base
 
 
 def database_connect(database_url: str):
